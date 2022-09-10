@@ -1,0 +1,13 @@
+version: '0.1'
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/home-assistant:stable
+    volumes:
+      - smart-home/homeassistant:/config
+    devices:
+      - /dev/ttyUSB0:/dev/ttyUSB0
+    environment:
+      TZ: Europe/Warsaw
+    restart: unless-stopped
+    network_mode: host
