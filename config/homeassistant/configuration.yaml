@@ -1,0 +1,21 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+mqtt:
+  broker: "mosquitto"
+  port: 1883
+  discovery: true
+  discovery_prefix: homeassistant
+panel_iframe:
+  zigbee2mqtt:
+    title: "zigbee2mqtt"
+    url: "http://192.168.55.12:8080"
+    icon: mdi:zigbee
+    require_admin: true
